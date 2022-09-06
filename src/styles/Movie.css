@@ -5,7 +5,7 @@
   margin: 10px;
   width: 300px;
   border-radius: 5%;
-  cursor: pointer;
+  box-shadow: 3px 5px 3px #888;
 }
 
 .poster {
@@ -13,6 +13,7 @@
   border-radius: 5% 0 35% 5%;
   object-fit: cover;
   box-shadow: 5px 0px #8888;
+  cursor: pointer;
 }
 
 .poster:hover {
@@ -22,9 +23,25 @@
 
 .movie-data {
   display: flex;
-  
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+.movie-title {
+  font-weight: bold;
+}
+
+.movie-imdbScore {
+  padding: 2px;
+  background-color: yellow;
+  border-radius: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.movie-imdbScore:hover {
+  font-size: 17px;
+  transition: 0.5s;
 }
