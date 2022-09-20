@@ -14,7 +14,13 @@ const MovieForm = () => {
       </div>
       <div className="new-movie__control">
         <label>Genre</label>
-        <input type="text"></input>
+        <select>
+          <option value="drama">drama</option>
+          <option value="comedy">comedy</option>
+          <option value="horror">sci-fi</option>
+          <option value="sci-fi">horror</option>
+          <option value="thriller">thriller</option>
+        </select>
       </div>
       <div className="new-movie__control">
         <label>IMDb Score</label>
