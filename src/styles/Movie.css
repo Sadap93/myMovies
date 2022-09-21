@@ -41,6 +41,7 @@ body {
 
 .poster {
   height: 200px;
+  width: 135px;
   border-radius: 5% 0 35% 5%;
   object-fit: cover;
   box-shadow: 5px 0px #8888;
@@ -75,4 +76,29 @@ body {
 .movie-imdbScore:hover {
   font-size: 17px;
   transition: 0.5s;
+}
+
+.btn_submit {
+  width: 100px;
+  height: 35px;
+  color: white;
+  font-size: 16px;
+  background-color: #1ECD97;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 3px 3px 3px #888;
+}
+
+.btn_submit:hover{
+  color: #1ECD97;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.btn_submit:active{
+  box-shadow: none;
+  position: relative;
+  top: 3px;
+  left: 3px;
 }

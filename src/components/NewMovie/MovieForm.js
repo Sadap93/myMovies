@@ -92,17 +92,19 @@ const MovieForm = ({ addMovieHandler }) => {
             value={enteredMovieScore}
             onChange={scoreChangeHandler}
           ></input>
-          <div className="new-movie__control">
-            <label>Picture link</label>
-            <input
-              type="text"
-              value={enteredMoviePicture}
-              onChange={pictureChangeHandler}
-            ></input>
-          </div>
+        </div>
+        <div className="new-movie__control">
+          <label>Picture link</label>
+          <input
+            type="text"
+            value={enteredMoviePicture}
+            onChange={pictureChangeHandler}
+          ></input>
         </div>
         <div className="new-movie__actions">
-          <button type="submit">Add Movie</button>
+          <button type="submit" className="btn_submit">
+            Add Movie
+          </button>
         </div>
       </div>
     </form>
