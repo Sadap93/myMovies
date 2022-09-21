@@ -7,15 +7,9 @@ import { useState } from "react";
 function App() {
   const [movies, setMovies] = useState(MoviesArray);
 
-  const addMovieHandler = (movie) => {
-    setMovies((prevMovies) => {
-      return [movie, ...prevMovies];
-    });
-  };
-
   return (
     <div className="wrapper">
-      <NewMovie onAddMovie={addMovieHandler}/>
+      <NewMovie  setMovies={setMovies}/>
       <MovieList movies={movies}/>
     </div>
   );

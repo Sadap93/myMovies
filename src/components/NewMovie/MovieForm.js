@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./MovieForm.css";
+import { categories } from "../../categoriesArray";
 
-const MovieForm = ({ onSaveMovieData }) => {
+const MovieForm = ({ addMovieHandler }) => {
   const [enteredMovieTitle, setEnteredMovieTitle] = useState("");
   const [enteredMovieDate, setEnteredMovieDate] = useState("");
-  const [enteredMovieGenre, setEnteredMovieGenre] = useState("");
+  const [enteredMovieGenre, setEnteredMovieGenre] = useState("drama");
   const [enteredMovieScore, setEnteredMovieScore] = useState("");
   const [enteredMoviePicture, setEnteredMoviePicture] = useState("");
 
@@ -34,17 +35,19 @@ const MovieForm = ({ onSaveMovieData }) => {
     const movieData = {
       title: enteredMovieTitle,
       genre: enteredMovieGenre,
-      relaseDate: new Date(enteredMovieDate),
+      relaseDate: new Date(enteredMovieDate).getFullYear(),
       imdbScore: enteredMovieScore,
       picture: enteredMoviePicture,
+      id: Math.random().toString(),
     };
-    {
-      onSaveMovieData(movieData);
-    }
+
+    addMovieHandler(movieData);
+
     setEnteredMovieTitle("");
     setEnteredMovieDate("");
     setEnteredMovieGenre("");
     setEnteredMovieScore("");
+    console.log(movieData);
   };
 
   return (
@@ -71,11 +74,11 @@ const MovieForm = ({ onSaveMovieData }) => {
         <div className="new-movie__control">
           <label>Genre</label>
           <select value={enteredMovieGenre} onChange={genreChangeHandler}>
-            <option value="drama">drama</option>
-            <option value="comedy">comedy</option>
-            <option value="horror">sci-fi</option>
-            <option value="sci-fi">horror</option>
-            <option value="thriller">thriller</option>
+            {categories.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
           </select>
         </div>
         <div className="new-movie__control">

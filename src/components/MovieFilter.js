@@ -1,4 +1,5 @@
 import React from "react";
+import { categories } from "./../categoriesArray";
 
 const MovieFilter = ({ onChangeFilter, selectedGenre }) => {
   const onChangeFilterHandler = (event) => {
@@ -11,10 +12,11 @@ const MovieFilter = ({ onChangeFilter, selectedGenre }) => {
       <div className="movie-filter">
         <label>Filter by genre:</label>
         <select value={selectedGenre} onChange={onChangeFilterHandler}>
-          <option value="all">All</option>
-          <option value="horror">horror</option>
-          <option value="sci-fi">sci-fi</option>
-          <option value="thriller">thriller</option>
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
         </select>
       </div>
     </>

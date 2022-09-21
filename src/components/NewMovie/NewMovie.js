@@ -1,15 +1,14 @@
 import React from "react";
 import MovieForm from "./MovieForm";
 
-const NewMovie = ({ onAddMovie }) => {
-  const saveMovieDataHandler = (enteredMovieData) => {
-    const movieData = {
-      ...enteredMovieData,
-      id: Math.random().toString(),
-    };
-    onAddMovie(movieData);
+const NewMovie = ({ setMovies }) => {
+  const addMovieHandler = (movie) => {
+    setMovies((prevMovies) => {
+      return [...prevMovies, movie];
+    });
   };
-  return <MovieForm onSaveMovieData={saveMovieDataHandler}/>;
+
+  return <MovieForm addMovieHandler={addMovieHandler} />;
 };
 
 export default NewMovie;
