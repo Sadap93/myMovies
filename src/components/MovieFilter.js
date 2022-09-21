@@ -12,6 +12,7 @@ const MovieFilter = ({ onChangeFilter, selectedGenre }) => {
       <div className="movie-filter">
         <label>Filter by genre:</label>
         <select value={selectedGenre} onChange={onChangeFilterHandler}>
+          <option value="all">All</option>
           {categories.map((category) => (
             <option key={category} value={category}>
               {category}

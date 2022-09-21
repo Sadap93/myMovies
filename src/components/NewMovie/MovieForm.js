@@ -47,6 +47,7 @@ const MovieForm = ({ addMovieHandler }) => {
     setEnteredMovieDate("");
     setEnteredMovieGenre("");
     setEnteredMovieScore("");
+    setEnteredMoviePicture("");
     console.log(movieData);
   };
 
@@ -86,7 +87,8 @@ const MovieForm = ({ addMovieHandler }) => {
           <input
             type="number"
             min="1.0"
-            max="10"
+            max="10.0"
+            step="0.1"
             value={enteredMovieScore}
             onChange={scoreChangeHandler}
           ></input>
