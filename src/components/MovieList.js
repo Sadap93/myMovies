@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import Movie from "./Movie";
 import MovieFilter from "./MovieFilter";
-import { MoviesArray } from "../MoviesArray";
 
-const MovieList = () => {
+const MovieList = ({ movies }) => {
   const [filteredGenre, setFilteredGenre] = useState("all");
 
   const filterChangeHandler = (selectedGenre) => {
     setFilteredGenre(selectedGenre);
   };
 
-  const filteredMovie = MoviesArray.filter((movie) => {
+  const filteredMovie = movies.filter((movie) => {
     if (filteredGenre === "all") {
       return movie;
     }
