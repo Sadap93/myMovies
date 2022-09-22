@@ -41,14 +41,23 @@ const MovieForm = ({ addMovieHandler }) => {
       id: Math.random().toString(),
     };
 
-    addMovieHandler(movieData);
+    if (
+      enteredMovieTitle === "" ||
+      enteredMovieDate === "" ||
+      enteredMovieScore === "" ||
+      enteredMoviePicture === ""
+    ) {
+      alert("Input fields must be filled!");
+    } else {
+      addMovieHandler(movieData);
 
-    setEnteredMovieTitle("");
-    setEnteredMovieDate("");
-    setEnteredMovieGenre("");
-    setEnteredMovieScore("");
-    setEnteredMoviePicture("");
-    console.log(movieData);
+      setEnteredMovieTitle("");
+      setEnteredMovieDate("");
+      setEnteredMovieGenre("");
+      setEnteredMovieScore("");
+      setEnteredMoviePicture("");
+      console.log(movieData);
+    }
   };
 
   return (
